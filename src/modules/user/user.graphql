@@ -1,0 +1,51 @@
+type Query {
+  getUserDetails: User @isAuthenticated
+}
+
+type Mutation {
+  signUp(data: SignupInput!): SignUpResponse
+  verifyEmail(data: VerifyEmailInput!): CommonReponse
+  login(data: LoginInput!): LoginResponse
+  forgotPassword(email: String!): CommonReponse
+  resetPassword(data: ResetPasswordInput!): CommonReponse
+}
+
+input ResetPasswordInput {
+  token: String!
+  newPassword: String!
+}
+
+input LoginInput {
+  email: String!
+  password: String!
+}
+
+type LoginResponse {
+  message: String
+  user: User
+  accessToken: String
+  refreshToken: String
+}
+
+input SignupInput {
+  name: String!
+  email: String!
+  password: String!
+}
+
+type SignUpResponse {
+  user: User
+  message: String
+}
+
+input VerifyEmailInput {
+  userId: String!
+  token: String!
+}
+
+type User {
+  id: String
+  name: String
+  email: String
+  isEmailVerified: Boolean
+}
