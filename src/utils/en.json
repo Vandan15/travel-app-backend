@@ -11,5 +11,6 @@
   "RESET_PASSWORD_LINK_SENT_ON_EMAIL": "Reset password link has been sent to your link!",
   "PASSWORD_UPDATED_SUCCESSFULLY": "Password updated successfully!",
   "USER_DETAILS_UPDATED_SUCCESSFULLY": "User details updated successfully!",
-  "USER_DOES_NOT_EXIST": "User does not exist!"
+  "USER_DOES_NOT_EXIST": "User does not exist!",
+  "USER_LOGGED_IN_SUCCESSFULLY": "Logged in successfully!"
 }
