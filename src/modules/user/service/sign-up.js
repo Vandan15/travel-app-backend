@@ -35,7 +35,7 @@ const signUp = async (data) => {
     // SEND VERIFICATION MAIL TO USER
     const emailData = {
       reciverDetails: { reciverEmail: email },
-      data: { name, url: `${APP_URL}/verify-email?email=${email}&token=${createdUser?.verificationToken}` },
+      data: { name, url: `${APP_URL}/verify-email?uid=${createdUser?._id}&token=${createdUser?.verificationToken}` },
       template: VERIFY_USER_EMAIL.content,
       subject: VERIFY_USER_EMAIL.subject
     }

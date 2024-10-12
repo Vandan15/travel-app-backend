@@ -1,11 +1,5 @@
 const config = {
-  DB: {
-    USERNAME: process.env.POSTGRES_USERNAME,
-    PASSWORD: process.env.POSTGRES_PASSWORD,
-    DATABASE: process.env.POSTGRES_DATABASE,
-    HOST: process.env.POSTGRES_HOST,
-    PORT: process.env.POSTGRES_PORT
-  },
+  MONGODB_URL: process.env.MONGODB_URL,
   ENCRYPTION: {
     KEY: process.env.ENCRYPTION_KEY,
     IV: process.env.ENCRYPTION_IV

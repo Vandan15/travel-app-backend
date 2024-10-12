@@ -4,9 +4,9 @@ const CustomGraphqlError = require('../../../utils/graphql/error');
 
 const verifyEmail = async (data) => {
   try {
-    const { email, token } = data;
+    const { userId, token } = data;
 
-    const user = await UserModel.findOne({ email });
+    const user = await UserModel.findOne({ _id: userId });
 
     if (!user) {
       throw CustomGraphqlError(getMessage('EMAIL_DOESNT_EXIST'));
@@ -20,7 +20,7 @@ const verifyEmail = async (data) => {
       throw CustomGraphqlError(getMessage('INVALID_VERIFICATION_TOKEN'));
     }
 
-    await UserModel.updateOne({ email }, { isEmailVerified: true, verificationToken: null });
+    await UserModel.updateOne({ _id: userId }, { isEmailVerified: true, verificationToken: null });
     return { message: getMessage('EMAIL_VERIFIED_SUCCESSFULLY') };
   } catch (error) {
     throw error;

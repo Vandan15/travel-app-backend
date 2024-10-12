@@ -39,7 +39,7 @@ type SignUpResponse {
 }
 
 input VerifyEmailInput {
-  email: String!
+  userId: String!
   token: String!
 }
 
