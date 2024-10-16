@@ -1,0 +1,30 @@
+type Query {
+  hotels(filter: HotelsFilter!): HotelsResponse @isAuthenticated
+  locations: LocationsResponse @isAuthenticated
+}
+
+input HotelsFilter {
+  location: String!
+}
+
+type HotelsResponse {
+  count: Int
+  hotels: [Hotel]
+}
+
+type LocationsResponse {
+  count: Int
+  locations: JSON
+}
+
+type Hotel {
+  id: String
+  name: String
+  country: String
+  city: String
+  description: String
+  hotelPictures: [String]
+  ratings: Float
+  price: Float
+  salePrice: Float
+}

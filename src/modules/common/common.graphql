@@ -2,6 +2,7 @@ directive @hasRole(roles: [String]) on FIELD_DEFINITION
 directive @isAuthenticated on FIELD_DEFINITION
 
 scalar Date
+scalar JSON
 
 type CommonReponse {
     message: String
