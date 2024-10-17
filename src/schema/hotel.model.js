@@ -32,7 +32,7 @@ const hotel = new mongoose.Schema({
     required: true
   },
   salePrice: {
-    type: Number // Optional field, can be null if no sale
+    type: Number
   }
 });
 

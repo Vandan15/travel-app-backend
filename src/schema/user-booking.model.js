@@ -21,6 +21,18 @@ const userBooking = new mongoose.Schema({
   }
 });
 
+// Created a virtual field 'hotel' as an alias for 'hotelId'
+userBooking.virtual('hotel').get(function () {
+  return this.hotelId;
+});
+
+userBooking.virtual('user').get(function () {
+  return this.userId;
+});
+
+userBooking.set('toJSON', { virtuals: true });
+userBooking.set('toObject', { virtuals: true });
+
 const UserBookingModel = mongoose.model('UserBooking', userBooking);
 
 module.exports = UserBookingModel;
