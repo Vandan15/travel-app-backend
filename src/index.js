@@ -26,7 +26,7 @@ schema = applyDirective(schema);
 const initServer = async () => {
   try {
     const httpServer = http.createServer(app);
-    await connectDB();
+    const mongoClient = await connectDB();
 
     const server = new ApolloServer({
       schema,
@@ -55,6 +55,7 @@ const initServer = async () => {
             ...ctx,
             req: ctx.req,
             res: ctx.res,
+            db: mongoClient
           };
         }
       })

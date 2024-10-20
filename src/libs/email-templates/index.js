@@ -1,3 +1,4 @@
+const bookingConfirmation = require("./booking-confirmation");
 const resetPassword = require("./reset-password");
 const verifyUserEmail = require("./verify-user-email");
 
@@ -9,6 +10,10 @@ const EMAIL_TEMPLATES = {
   RESET_PASSWORD: {
     subject: "Reset Your Password",
     content: resetPassword
+  },
+  BOOKING_CONFIRMATION: {
+    subject: "Booking Confirmation",
+    content: bookingConfirmation
   }
 }
 

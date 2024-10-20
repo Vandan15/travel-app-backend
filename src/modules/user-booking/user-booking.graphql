@@ -1,0 +1,36 @@
+type Query {
+  userBookings: UserBookingsResponse @isAuthenticated
+}
+
+type Mutation {
+  createUserBooking(data: CreateUserBookingInput!): CreateUserBookingResponse @isAuthenticated
+  cancelUserBooking(data: UserBookingWhereInput!): CommonReponse @isAuthenticated
+}
+
+input CreateUserBookingInput {
+ hotelId: String!
+ checkIn: Date!
+ checkOut: Date!
+}
+
+input UserBookingWhereInput {
+  id: String!
+}
+
+type CreateUserBookingResponse {
+  message: String
+  booking: UserBooking
+}
+
+type UserBookingsResponse {
+  count: Int
+  userBookings: [UserBooking]
+}
+
+type UserBooking {
+  id: String
+  user: User
+  hotel: Hotel
+  checkIn: Date
+  checkOut: Date
+}

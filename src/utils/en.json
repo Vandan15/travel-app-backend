@@ -12,5 +12,11 @@
   "PASSWORD_UPDATED_SUCCESSFULLY": "Password updated successfully!",
   "USER_DETAILS_UPDATED_SUCCESSFULLY": "User details updated successfully!",
   "USER_DOES_NOT_EXIST": "User does not exist!",
-  "USER_LOGGED_IN_SUCCESSFULLY": "Logged in successfully!"
+  "USER_LOGGED_IN_SUCCESSFULLY": "Logged in successfully!",
+  "HOTEL_NOT_FOUND": "Hotel not found!",
+  "CHECKOUT_DATE_MUST_BE_GREATER_THAN_CHECKIN": "Check-out date must be greater than Check-in date!",
+  "USER_BOOKING_CREATE_SUCCESS": "Your hotel booking has been made!",
+  "USER_BOOKING_NOT_FOUND": "No booking found!",
+  "USER_BOOKING_CANCELLED_SUCCESS": "Your booking has been cancelled successfully!",
+  "BOOKING_ALREADY_EXISTS": "You already have a booking on this place at your selected period!"
 }
