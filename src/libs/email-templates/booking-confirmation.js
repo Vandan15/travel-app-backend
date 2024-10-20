@@ -1,55 +1,63 @@
 const bookingConfirmation = `
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>Verify Your Email</title>
-    <style type="text/css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Confirmation</title>
+    <style>
         body {
             font-family: Arial, sans-serif;
-            font-size: 14px;
             line-height: 1.6;
-            color: #333333;
+            color: #333;
         }
-        .button {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: #ffffff;
-            text-decoration: none;
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+        .content {
+            background-color: #f9f9f9;
+            padding: 20px;
             border-radius: 5px;
-            font-weight: bold;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 12px;
+            color: #777;
         }
     </style>
 </head>
 <body>
-    <table width="100%" cellpadding="0" cellspacing="0" border="0">
-        <tr>
-            <td>
-                <table align="center" width="600" cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse;">
-                    <tr>
-                        <td style="padding: 20px;">
-                            <h1>Verify Your Email Address</h1>
-                            <p>Thank you for signing up! Please verify your email address to complete your registration.</p>
-
-                            <p>Click the button below to verify your email:</p>
-                            <table cellpadding="0" cellspacing="0" border="0">
-                                <tr>
-                                    <td style="padding: 10px 0;">
-                                        <a href="{{params.url}}" class="button" style="color: #ffffff;">Verify Email</a>
-                                    </td>
-                                </tr>
-                            </table>
-
-                            <p>If you didn't create an account, please ignore this email.</p>
-
-                            <p>Best regards,<br>Weekendmonks</p>
-                        </td>
-                    </tr>
-                </table>
-            </td>
-        </tr>
-    </table>
+    <div class="container">
+        <div class="header">
+            <h1>Booking Confirmation</h1>
+        </div>
+        <div class="content">
+            <h2>Dear {{params.name}},</h2>
+            <p>Thank you for choosing our hotel. Your booking has been successfully confirmed!</p>
+            <h3>Booking Details:</h3>
+            <ul>
+                <li><strong>Booking Reference:</strong> {{params.bookingReference}}</li>
+                <li><strong>Hotel Name:</strong> {{params.hotelName}}</li>
+                <li><strong>Check-in Date:</strong> {{params.checkIn}}</li>
+                <li><strong>Check-out Date:</strong> {{params.checkOut}}</li>
+            </ul>
+            <p>Happy Stay!</p>
+            <p>Best regards,<br>The Reservation Team</p>
+        </div>
+        <div class="footer">
+            <p>This is an automated message. Please do not reply to this email.</p>
+            <p>&copy; Weekendmonks. All rights reserved.</p>
+        </div>
+    </div>
 </body>
 </html>
 `

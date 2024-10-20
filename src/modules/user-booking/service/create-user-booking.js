@@ -50,8 +50,8 @@ const createUserBooking = async (data, user = {}) => {
     // SEND BOOKING CONFIRMATION MAIL
     const emailData = {
       reciverDetails: { reciverEmail: email },
-      data: { name, url: `${APP_URL}/verify-email?uid=${userId}&token=sdasasa` },
-      template:BOOKING_CONFIRMATION.content,
+      data: { name, bookingReference: createdBooking?.id, hotelName: hotel?.name, checkIn, checkOut },
+      template: BOOKING_CONFIRMATION.content,
       subject: BOOKING_CONFIRMATION.subject
     }
 

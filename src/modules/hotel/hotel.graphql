@@ -1,6 +1,6 @@
 type Query {
-  hotels(filter: HotelsFilter!): HotelsResponse @isAuthenticated
-  locations: LocationsResponse @isAuthenticated
+  hotels(filter: HotelsFilter!): HotelsResponse
+  locations: LocationsResponse
 }
 
 input HotelsFilter {
